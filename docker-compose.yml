@@ -1,27 +1,19 @@
 version: "2.3"
 services:
-  lc0: &lc0
-    cpus: 2
-    mem_limit: "4g"
-    working_dir: /lc0/bin
-    image: vochicong/lc0-docker
-    build:
-      context: .
-      target: lc0
-    runtime: nvidia
-    env_file:
-      - .env
-
-  lcbot: &bot
-    <<: *lc0
+  lcbot:
+    cpus: 4
+    mem_limit: "10g"
+    working_dir: /lcbot
+    image: eduherminio/lynx-docker
     build:
       context: .
       target: lcbot
+    env_file:
+      - .env
     volumes:
       - ./lcbot-config.yml:/lcbot/configtmp.yml
-      - ./lc0.config:/lc0/bin/lc0.config
-      - ./data:/data
       - ./log:/lcbot/log
+      - ./lynx-logs:/lynx/logs
     command:
       - sh
       - -c
