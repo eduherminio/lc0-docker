@@ -29,7 +29,7 @@ challenge:                  # incoming challenges
 #   - racingKings
 #   - threeCheck
   time_controls:            # time controls to accept
-    - ultraBullet
+#     - ultraBullet
     - bullet
     - blitz
     - rapid
@@ -37,7 +37,7 @@ challenge:                  # incoming challenges
     # - correspondence
   modes:                    # game modes to accept
     - casual                # unrated games
-    # - rated                 # rated games - must comment if the engine doesn't try to win
+    - rated                 # rated games - must comment if the engine doesn't try to win
 
 #   uci_options:              # Arbitrary UCI options passed to the engine.
 #     Move Overhead: 100      # Increase if your bot flags games too often.

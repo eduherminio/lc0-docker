@@ -2,7 +2,7 @@ version: "2.3"
 services:
   lcbot:
     cpus: 4
-    mem_limit: "10g"
+    mem_limit: "23g"
     working_dir: /lcbot
     image: eduherminio/lynx-docker
     build:
